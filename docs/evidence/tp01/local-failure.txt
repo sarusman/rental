@@ -1,0 +1,46 @@
++ ./gradlew clean test
+> Task :clean
+> Task :compileJava
+> Task :processResources
+> Task :classes
+> Task :compileTestJava
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-11-18T15:47:34.492+01:00 DEBUG 93702 --- [rental] [ionShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@40ab8a8, started on Wed Nov 18 15:47:33 CET 2026
+2026-11-18T15:47:34.493+01:00 DEBUG 93702 --- [rental] [ionShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@3d1c52f5, started on Wed Nov 18 15:47:34 CET 2026
+2026-11-18T15:47:34.494+01:00 DEBUG 93702 --- [rental] [ionShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@50f3ba6a, started on Wed Nov 18 15:47:34 CET 2026
+> Task :test
+
+BUILD SUCCESSFUL in 2s
+5 actionable tasks: 5 executed
++ /Users/sarusman/Desktop/rental-1/.venv/bin/python -m pytest
+============================= test session starts ==============================
+platform darwin -- Python 3.14.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/sarusman/Desktop/rental-1/apps/pricing-service
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.16.0
+collected 9 items
+
+tests/test_api.py ....                                                   [ 44%]
+tests/test_pricing.py .F...                                              [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_normalizes_the_category _________________________
+
+    def test_normalizes_the_category() -> None:
+        quote = calculate_quote(" Premium ", 2)
+    
+        assert quote.category == "premium"
+>       assert quote.total == 201.0
+E       AssertionError: assert 200.0 == 201.0
+E        +  where 200.0 = Quote(category='premium', days=2, daily_rate=100.0, total=200.0, currency='EUR').total
+
+tests/test_pricing.py:18: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_pricing.py::test_normalizes_the_category - AssertionError: ...
+========================= 1 failed, 8 passed in 0.22s ==========================
+ERROR: Command '['/Users/sarusman/Desktop/rental-1/.venv/bin/python', '-m', 'pytest']' returned non-zero exit status 1.
+
+Exit code: 1

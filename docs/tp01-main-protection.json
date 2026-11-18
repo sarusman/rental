@@ -1,0 +1,19 @@
+{
+  "required_status_checks": {
+    "strict": true,
+    "contexts": [
+      "Java tests",
+      "Java quality",
+      "Java Docker image",
+      "Python tests",
+      "Python quality",
+      "Python Docker image",
+      "Secret detection"
+    ]
+  },
+  "enforce_admins": true,
+  "required_pull_request_reviews": {
+    "required_approving_review_count": 0
+  },
+  "restrictions": null
+}

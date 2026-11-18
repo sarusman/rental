@@ -1,0 +1,45 @@
+{
+  "total_count": 2,
+  "artifacts": [
+    {
+      "id": 14438246951,
+      "node_id": "MDg6QXJ0aWZhY3QxNDQzODI0Njk1MQ==",
+      "name": "pricing-test-results",
+      "size_in_bytes": 454,
+      "url": "https://api.github.com/repos/sarusman/rental/actions/artifacts/14438246951",
+      "archive_download_url": "https://api.github.com/repos/sarusman/rental/actions/artifacts/14438246951/zip",
+      "expired": false,
+      "digest": "sha256:f6674a7f7b2489424576570fb53a12fc0a9b28c15630818ac296e096b9e94e1a",
+      "created_at": "2026-11-18T14:48:37Z",
+      "updated_at": "2026-11-18T14:48:37Z",
+      "expires_at": "2026-11-25T14:48:37Z",
+      "workflow_run": {
+        "id": 44328326263,
+        "repository_id": 1462922906,
+        "head_repository_id": 1462922906,
+        "head_branch": "tp/01-ci",
+        "head_sha": "2ee36084edc4a8c9847014994d748b40cd8e8b46"
+      }
+    },
+    {
+      "id": 14437293911,
+      "node_id": "MDg6QXJ0aWZhY3QxNDQzNzI5MzkxMQ==",
+      "name": "sarusman~rental~HL4ARH.dockerbuild",
+      "size_in_bytes": 24277,
+      "url": "https://api.github.com/repos/sarusman/rental/actions/artifacts/14437293911",
+      "archive_download_url": "https://api.github.com/repos/sarusman/rental/actions/artifacts/14437293911/zip",
+      "expired": false,
+      "digest": "sha256:4afa5d4cf826baf100241e1023c5bea17dba379eb03c7f858cf594b46c3ae3a9",
+      "created_at": "2026-11-18T14:49:02Z",
+      "updated_at": "2026-11-18T14:49:02Z",
+      "expires_at": "2027-02-16T14:48:26Z",
+      "workflow_run": {
+        "id": 44328326263,
+        "repository_id": 1462922906,
+        "head_repository_id": 1462922906,
+        "head_branch": "tp/01-ci",
+        "head_sha": "2ee36084edc4a8c9847014994d748b40cd8e8b46"
+      }
+    }
+  ]
+}

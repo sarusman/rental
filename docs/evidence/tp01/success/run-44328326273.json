@@ -1,0 +1,61 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-11-18T14:48:26Z",
+  "headSha": "2ee36084edc4a8c9847014994d748b40cd8e8b46",
+  "jobs": [
+    {
+      "completedAt": "2026-11-18T14:48:37Z",
+      "conclusion": "success",
+      "databaseId": 134885556218,
+      "name": "Secret detection",
+      "startedAt": "2026-11-18T14:48:30Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-18T14:48:31Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-18T14:48:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:33Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-18T14:48:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:35Z",
+          "conclusion": "success",
+          "name": "Scan Git history with Gitleaks",
+          "number": 3,
+          "startedAt": "2026-11-18T14:48:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:35Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 6,
+          "startedAt": "2026-11-18T14:48:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:35Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 7,
+          "startedAt": "2026-11-18T14:48:35Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/sarusman/rental/actions/runs/44328326273/job/134885556218"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-11-18T14:48:38Z",
+  "url": "https://github.com/sarusman/rental/actions/runs/44328326273"
+}

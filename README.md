@@ -1,9 +1,12 @@
-# Rental DevOps — checkpoint 02
+# Rental DevOps — TP 01
 
 Ce monorepo est le socle d'une formation DevOps pratique destinée à des
-étudiants de master. Le checkpoint 02 sécurise la chaîne de production des
-images : références immuables, nomenclatures logicielles, signatures sans clé
-et attestations de provenance.
+étudiants de master. La branche `tp/01-ci` réalise le TP 01 : tests et qualité
+bloquants, construction des images, détection des secrets et rapports exploitables.
+
+Le [compte rendu du TP](docs/TP-01-COMPTE-RENDU.md) rassemble les choix,
+les expériences d'échec, les preuves et les étapes restant soumises aux
+éléments fournis par l'enseignant.
 
 ## Architecture actuelle
 
@@ -62,11 +65,10 @@ Depuis la racine :
 python scripts/course.py verify
 ```
 
-Cette commande exécute les tests Gradle et Pytest, Checkstyle, Ruff, puis la
-politique locale de chaîne logicielle.
+Cette commande exécute les tests Gradle et Pytest, puis Checkstyle et Ruff.
+Elle s'arrête au premier échec et retourne le code 1.
 Pour diagnostiquer une étape séparément, utiliser `test`, `lint`,
-`test-java`, `test-python`, `lint-java`, `lint-python` ou
-`supply-chain-policy`.
+`test-java`, `test-python`, `lint-java` ou `lint-python`.
 
 ## Intégration continue
 
@@ -74,14 +76,13 @@ Chaque pull request vers `main` déclenche huit contrôles lisibles :
 
 - tests, qualité et construction de l'image pour le service Java ;
 - tests, qualité et construction de l'image pour le service Python ;
-- détection de secrets sur l'historique Git.
-- revue des dépendances ajoutées ou mises à jour.
+- détection de secrets sur l'historique Git ;
+- revue des dépendances ajoutées ou mises à jour, conservée depuis `main`.
 
 Les rapports de tests et de qualité sont conservés sept jours comme artefacts
-GitHub Actions. Sur `main`, chaque image est publiée par digest dans GHCR, signée
-avec Cosign, accompagnée d'un SBOM SPDX et de deux attestations GitHub, puis
-analysée avec Trivy. Les workflows vérifient leurs propres preuves avant de se
-terminer.
+GitHub Actions. Les images sont construites uniquement après le succès des
+tests et de la qualité. La connexion GHCR, la publication des images et leur
+scan Trivy sont réservés aux événements `push` sur `main`.
 
 ## Exécution avec Docker Compose
 
@@ -129,9 +130,9 @@ tests/                Futures suites de tests système
 - dépendances transitives applicatives non verrouillées par hash ;
 - aucune vérification de signature à l'admission Kubernetes.
 
-Voir [la fiche du checkpoint](docs/CHECKPOINT-02.md), le
-[support de cours](course/slides/02-supply-chain.qmd) et le
-[TP 02](course/labs/tp02.qmd).
+Voir le [compte rendu et les preuves](docs/TP-01-COMPTE-RENDU.md), le
+[support de cours](course/slides/01-ci.qmd) et le
+[TP 01](course/labs/tp01.qmd).
 
 Le point de départ étudiant reste disponible sous le tag
 `checkpoint/00-starter`. Les deux premières étapes validées sont publiées sous

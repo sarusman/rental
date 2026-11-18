@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="9" time="0.453" timestamp="2026-11-18T14:44:17.543957+00:00" hostname="runnervm8axu0"><testcase classname="tests.test_api" name="test_health_endpoint" time="0.006" /><testcase classname="tests.test_api" name="test_creates_a_quote" time="0.004" /><testcase classname="tests.test_api" name="test_rejects_an_unknown_category" time="0.004" /><testcase classname="tests.test_api" name="test_rejects_a_zero_day_quote" time="0.003" /><testcase classname="tests.test_pricing" name="test_calculates_a_quote" time="0.000" /><testcase classname="tests.test_pricing" name="test_normalizes_the_category" time="0.000"><failure message="AssertionError: Échec volontaire pour le TP 01&#10;assert False">def test_normalizes_the_category() -&gt; None:
+        quote = calculate_quote(" Premium ", 2)
+&gt;       assert False, "Échec volontaire pour le TP 01"
+E       AssertionError: Échec volontaire pour le TP 01
+E       assert False
+
+tests/test_pricing.py:16: AssertionError</failure></testcase><testcase classname="tests.test_pricing" name="test_rejects_an_invalid_duration[0]" time="0.001" /><testcase classname="tests.test_pricing" name="test_rejects_an_invalid_duration[-1]" time="0.000" /><testcase classname="tests.test_pricing" name="test_rejects_an_unknown_category" time="0.000" /></testsuite></testsuites>

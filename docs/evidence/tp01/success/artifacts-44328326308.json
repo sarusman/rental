@@ -1,0 +1,65 @@
+{
+  "total_count": 3,
+  "artifacts": [
+    {
+      "id": 14437709103,
+      "node_id": "MDg6QXJ0aWZhY3QxNDQzNzcwOTEwMw==",
+      "name": "sarusman~rental~OOUWW3.dockerbuild",
+      "size_in_bytes": 40844,
+      "url": "https://api.github.com/repos/sarusman/rental/actions/artifacts/14437709103",
+      "archive_download_url": "https://api.github.com/repos/sarusman/rental/actions/artifacts/14437709103/zip",
+      "expired": false,
+      "digest": "sha256:a81f9d1441b35c3bd7b1c6e7a7f8b9011bb7d7c071339f1dce5524a57b8077a5",
+      "created_at": "2026-11-18T14:50:23Z",
+      "updated_at": "2026-11-18T14:50:23Z",
+      "expires_at": "2027-02-16T14:48:26Z",
+      "workflow_run": {
+        "id": 44328326308,
+        "repository_id": 1462922906,
+        "head_repository_id": 1462922906,
+        "head_branch": "tp/01-ci",
+        "head_sha": "2ee36084edc4a8c9847014994d748b40cd8e8b46"
+      }
+    },
+    {
+      "id": 14437244680,
+      "node_id": "MDg6QXJ0aWZhY3QxNDQzNzI0NDY4MA==",
+      "name": "java-test-results",
+      "size_in_bytes": 20376,
+      "url": "https://api.github.com/repos/sarusman/rental/actions/artifacts/14437244680",
+      "archive_download_url": "https://api.github.com/repos/sarusman/rental/actions/artifacts/14437244680/zip",
+      "expired": false,
+      "digest": "sha256:8bd0f1c773309945ce0d09f8e9c2ded12023c2112e511e9aa6b6c12389b86fc3",
+      "created_at": "2026-11-18T14:49:00Z",
+      "updated_at": "2026-11-18T14:49:00Z",
+      "expires_at": "2026-11-25T14:48:59Z",
+      "workflow_run": {
+        "id": 44328326308,
+        "repository_id": 1462922906,
+        "head_repository_id": 1462922906,
+        "head_branch": "tp/01-ci",
+        "head_sha": "2ee36084edc4a8c9847014994d748b40cd8e8b46"
+      }
+    },
+    {
+      "id": 14437158973,
+      "node_id": "MDg6QXJ0aWZhY3QxNDQzNzE1ODk3Mw==",
+      "name": "java-checkstyle",
+      "size_in_bytes": 2135,
+      "url": "https://api.github.com/repos/sarusman/rental/actions/artifacts/14437158973",
+      "archive_download_url": "https://api.github.com/repos/sarusman/rental/actions/artifacts/14437158973/zip",
+      "expired": false,
+      "digest": "sha256:e75f83da7a8931f1d77aeb232d6030334027754d717eb8d323c37277902c40d9",
+      "created_at": "2026-11-18T14:48:57Z",
+      "updated_at": "2026-11-18T14:48:57Z",
+      "expires_at": "2026-11-25T14:48:56Z",
+      "workflow_run": {
+        "id": 44328326308,
+        "repository_id": 1462922906,
+        "head_repository_id": 1462922906,
+        "head_branch": "tp/01-ci",
+        "head_sha": "2ee36084edc4a8c9847014994d748b40cd8e8b46"
+      }
+    }
+  ]
+}

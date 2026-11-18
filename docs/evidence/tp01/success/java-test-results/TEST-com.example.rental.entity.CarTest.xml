@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Car Entity Tests" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-11-18T14:48:57.680Z" hostname="runnervmccnms" time="0.013">
+  <properties/>
+  <testcase name="Should create a car with default constructor" classname="com.example.rental.entity.CarTest" time="0.003"/>
+  <testcase name="Should create independent car instances" classname="com.example.rental.entity.CarTest" time="0.001"/>
+  <testcase name="Should get and set rented status" classname="com.example.rental.entity.CarTest" time="0.001"/>
+  <testcase name="Should create a car with correct attributes" classname="com.example.rental.entity.CarTest" time="0.002"/>
+  <testcase name="Should toggle rented state multiple times" classname="com.example.rental.entity.CarTest" time="0.0"/>
+  <testcase name="Should get and set brand" classname="com.example.rental.entity.CarTest" time="0.0"/>
+  <testcase name="Rented status should not affect plate and brand" classname="com.example.rental.entity.CarTest" time="0.0"/>
+  <testcase name="Car should start in not-rented state" classname="com.example.rental.entity.CarTest" time="0.001"/>
+  <testcase name="Should get and set plate number" classname="com.example.rental.entity.CarTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

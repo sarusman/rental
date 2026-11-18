@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RentalService Unit Tests" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-11-18T14:48:57.695Z" hostname="runnervmccnms" time="0.012">
+  <properties/>
+  <testcase name="Should fail to return a car that is not rented" classname="com.example.rental.service.RentalServiceTest" time="0.001"/>
+  <testcase name="Should find a car by plate number" classname="com.example.rental.service.RentalServiceTest" time="0.001"/>
+  <testcase name="Should fail to rent an already rented car" classname="com.example.rental.service.RentalServiceTest" time="0.001"/>
+  <testcase name="Complete rental workflow: rent and return" classname="com.example.rental.service.RentalServiceTest" time="0.001"/>
+  <testcase name="Should return all cars from the service" classname="com.example.rental.service.RentalServiceTest" time="0.0"/>
+  <testcase name="Should successfully return a rented car" classname="com.example.rental.service.RentalServiceTest" time="0.0"/>
+  <testcase name="Should fail to return a non-existent car" classname="com.example.rental.service.RentalServiceTest" time="0.001"/>
+  <testcase name="Should handle multiple car rentals independently" classname="com.example.rental.service.RentalServiceTest" time="0.001"/>
+  <testcase name="Should successfully rent a car that is not rented" classname="com.example.rental.service.RentalServiceTest" time="0.001"/>
+  <testcase name="Should return empty when car not found" classname="com.example.rental.service.RentalServiceTest" time="0.001"/>
+  <testcase name="Should add a new car to the service" classname="com.example.rental.service.RentalServiceTest" time="0.001"/>
+  <testcase name="Should fail to rent a non-existent car" classname="com.example.rental.service.RentalServiceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

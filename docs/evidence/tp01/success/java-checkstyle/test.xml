@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="/home/runner/work/rental/rental/apps/car-rental-service/src/test/java/com/example/rental/service/RentalServiceTest.java">
+</file>
+<file name="/home/runner/work/rental/rental/apps/car-rental-service/src/test/java/com/example/rental/web/HealthWebServiceTest.java">
+</file>
+<file name="/home/runner/work/rental/rental/apps/car-rental-service/src/test/java/com/example/rental/web/RentalWebServiceTest.java">
+</file>
+<file name="/home/runner/work/rental/rental/apps/car-rental-service/src/test/java/com/example/rental/RentalApplicationTests.java">
+</file>
+<file name="/home/runner/work/rental/rental/apps/car-rental-service/src/test/java/com/example/rental/entity/CarTest.java">
+</file>
+</checkstyle>

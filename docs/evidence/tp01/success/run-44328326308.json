@@ -1,0 +1,267 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-11-18T14:48:26Z",
+  "headSha": "2ee36084edc4a8c9847014994d748b40cd8e8b46",
+  "jobs": [
+    {
+      "completedAt": "2026-11-18T14:49:04Z",
+      "conclusion": "success",
+      "databaseId": 134885621693,
+      "name": "Java tests",
+      "startedAt": "2026-11-18T14:48:35Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-18T14:48:38Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-18T14:48:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:38Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-18T14:48:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:46Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-java@v4",
+          "number": 3,
+          "startedAt": "2026-11-18T14:48:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:59Z",
+          "conclusion": "success",
+          "name": "Run Gradle tests",
+          "number": 4,
+          "startedAt": "2026-11-18T14:48:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:49:01Z",
+          "conclusion": "success",
+          "name": "Upload JUnit reports",
+          "number": 5,
+          "startedAt": "2026-11-18T14:48:59Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:49:01Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-java@v4",
+          "number": 9,
+          "startedAt": "2026-11-18T14:49:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:49:01Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 10,
+          "startedAt": "2026-11-18T14:49:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:49:01Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 11,
+          "startedAt": "2026-11-18T14:49:01Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/sarusman/rental/actions/runs/44328326308/job/134885621693"
+    },
+    {
+      "completedAt": "2026-11-18T14:48:59Z",
+      "conclusion": "success",
+      "databaseId": 134885622235,
+      "name": "Java quality",
+      "startedAt": "2026-11-18T14:48:35Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-18T14:48:39Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-18T14:48:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:43Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-18T14:48:39Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:47Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-java@v4",
+          "number": 3,
+          "startedAt": "2026-11-18T14:48:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:56Z",
+          "conclusion": "success",
+          "name": "Run Checkstyle",
+          "number": 4,
+          "startedAt": "2026-11-18T14:48:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:57Z",
+          "conclusion": "success",
+          "name": "Upload Checkstyle reports",
+          "number": 5,
+          "startedAt": "2026-11-18T14:48:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:57Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-java@v4",
+          "number": 9,
+          "startedAt": "2026-11-18T14:48:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:57Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 10,
+          "startedAt": "2026-11-18T14:48:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:48:58Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 11,
+          "startedAt": "2026-11-18T14:48:57Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/sarusman/rental/actions/runs/44328326308/job/134885622235"
+    },
+    {
+      "completedAt": "2026-11-18T14:50:28Z",
+      "conclusion": "success",
+      "databaseId": 134885972060,
+      "name": "Java Docker image",
+      "startedAt": "2026-11-18T14:49:07Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-18T14:49:11Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-18T14:49:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:49:12Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-18T14:49:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:49:19Z",
+          "conclusion": "success",
+          "name": "Run docker/setup-buildx-action@v3",
+          "number": 3,
+          "startedAt": "2026-11-18T14:49:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:49:19Z",
+          "conclusion": "skipped",
+          "name": "Log in to GHCR",
+          "number": 4,
+          "startedAt": "2026-11-18T14:49:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:49:20Z",
+          "conclusion": "success",
+          "name": "Extract Docker metadata",
+          "number": 5,
+          "startedAt": "2026-11-18T14:49:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:50:22Z",
+          "conclusion": "success",
+          "name": "Build Docker image",
+          "number": 6,
+          "startedAt": "2026-11-18T14:49:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:50:22Z",
+          "conclusion": "skipped",
+          "name": "Scan published image with Trivy",
+          "number": 7,
+          "startedAt": "2026-11-18T14:50:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:50:22Z",
+          "conclusion": "skipped",
+          "name": "Upload Trivy results to GitHub Security",
+          "number": 8,
+          "startedAt": "2026-11-18T14:50:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:50:23Z",
+          "conclusion": "success",
+          "name": "Post Build Docker image",
+          "number": 14,
+          "startedAt": "2026-11-18T14:50:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:50:26Z",
+          "conclusion": "success",
+          "name": "Post Run docker/setup-buildx-action@v3",
+          "number": 15,
+          "startedAt": "2026-11-18T14:50:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:50:26Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "startedAt": "2026-11-18T14:50:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-18T14:50:26Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-11-18T14:50:26Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/sarusman/rental/actions/runs/44328326308/job/134885972060"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-11-18T14:50:29Z",
+  "url": "https://github.com/sarusman/rental/actions/runs/44328326308"
+}

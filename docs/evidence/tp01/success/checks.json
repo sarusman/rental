@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Java tests",
+    "conclusion": "success",
+    "url": "https://github.com/sarusman/rental/actions/runs/44328326308/job/134885621693",
+    "startedAt": "2026-11-18T14:48:35Z",
+    "completedAt": "2026-11-18T14:49:04Z"
+  },
+  {
+    "name": "Java quality",
+    "conclusion": "success",
+    "url": "https://github.com/sarusman/rental/actions/runs/44328326308/job/134885622235",
+    "startedAt": "2026-11-18T14:48:35Z",
+    "completedAt": "2026-11-18T14:48:59Z"
+  },
+  {
+    "name": "Java Docker image",
+    "conclusion": "success",
+    "url": "https://github.com/sarusman/rental/actions/runs/44328326308/job/134885972060",
+    "startedAt": "2026-11-18T14:49:07Z",
+    "completedAt": "2026-11-18T14:50:28Z"
+  },
+  {
+    "name": "Python quality",
+    "conclusion": "success",
+    "url": "https://github.com/sarusman/rental/actions/runs/44328326263/job/134885555498",
+    "startedAt": "2026-11-18T14:48:30Z",
+    "completedAt": "2026-11-18T14:48:42Z"
+  },
+  {
+    "name": "Python tests",
+    "conclusion": "success",
+    "url": "https://github.com/sarusman/rental/actions/runs/44328326263/job/134885556115",
+    "startedAt": "2026-11-18T14:48:29Z",
+    "completedAt": "2026-11-18T14:48:40Z"
+  },
+  {
+    "name": "Python Docker image",
+    "conclusion": "success",
+    "url": "https://github.com/sarusman/rental/actions/runs/44328326263/job/134885726953",
+    "startedAt": "2026-11-18T14:48:44Z",
+    "completedAt": "2026-11-18T14:49:05Z"
+  },
+  {
+    "name": "Secret detection",
+    "conclusion": "success",
+    "url": "https://github.com/sarusman/rental/actions/runs/44328326273/job/134885556218",
+    "startedAt": "2026-11-18T14:48:30Z",
+    "completedAt": "2026-11-18T14:48:37Z"
+  },
+  {
+    "name": "Dependency review",
+    "conclusion": "success",
+    "url": "https://github.com/sarusman/rental/actions/runs/44328326529/job/134885558694",
+    "startedAt": "2026-11-18T14:48:30Z",
+    "completedAt": "2026-11-18T14:48:38Z"
+  }
+]
