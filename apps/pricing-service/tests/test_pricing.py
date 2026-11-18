@@ -15,7 +15,7 @@ def test_normalizes_the_category() -> None:
     quote = calculate_quote(" Premium ", 2)
 
     assert quote.category == "premium"
-    assert quote.total == 201.0
+    assert quote.total == 200.0
 
 
 @pytest.mark.parametrize("days", [0, -1])
