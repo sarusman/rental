@@ -46,7 +46,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-test-results
-          path: apps/car-rental-service/build/test-results/test/*.xml
+          path: |
+            apps/car-rental-service/build/test-results/test/*.xml
+            apps/car-rental-service/build/reports/tests/test/
           retention-days: 7
 
   quality:

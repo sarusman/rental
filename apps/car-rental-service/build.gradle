@@ -17,6 +17,11 @@ repositories {
 	mavenCentral()
 }
 
+checkstyle {
+	toolVersion = '9.3'
+	configFile = file('config/checkstyle/checkstyle.xml')
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	
@@ -32,4 +37,11 @@ tasks.named('test') {
 
 tasks.withType(JavaCompile).configureEach {
 	options.release = 17
+}
+
+tasks.withType(Checkstyle).configureEach {
+	reports {
+		xml.required = true
+		html.required = true
+	}
 }

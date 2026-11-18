@@ -43,6 +43,7 @@ def test() -> None:
     test_java()
     test_python()
 
+
 def lint_java() -> None:
     run([*gradle_command(), "checkstyleMain", "checkstyleTest"], cwd=CAR_SERVICE)
 
@@ -63,6 +64,7 @@ def lint() -> None:
 def verify() -> None:
     test()
     lint()
+
 
 def compose_up() -> None:
     require_command("docker")
@@ -130,6 +132,7 @@ def prerequisites() -> None:
 
     if missing:
         raise RuntimeError("One or more prerequisites are missing")
+
 
 def main() -> int:
     commands = {
