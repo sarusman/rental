@@ -44,6 +44,28 @@ def test() -> None:
     test_python()
 
 
+def lint_java() -> None:
+    run([*gradle_command(), "checkstyleMain", "checkstyleTest"], cwd=CAR_SERVICE)
+
+
+def lint_python() -> None:
+    run([sys.executable, "-m", "ruff", "check", "app", "tests"], cwd=PRICING_SERVICE)
+    run(
+        [sys.executable, "-m", "ruff", "format", "--check", "app", "tests"],
+        cwd=PRICING_SERVICE,
+    )
+
+
+def lint() -> None:
+    lint_java()
+    lint_python()
+
+
+def verify() -> None:
+    test()
+    lint()
+
+
 def compose_up() -> None:
     require_command("docker")
     run(["docker", "compose", "up", "--build", "--detach"])
@@ -113,30 +135,23 @@ def prerequisites() -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "command",
-        choices=[
-            "prerequisites",
-            "test",
-            "test-java",
-            "test-python",
-            "compose-up",
-            "compose-down",
-            "smoke",
-        ],
-    )
-    args = parser.parse_args()
-
     commands = {
         "prerequisites": prerequisites,
         "test": test,
         "test-java": test_java,
         "test-python": test_python,
+        "lint": lint,
+        "lint-java": lint_java,
+        "lint-python": lint_python,
+        "verify": verify,
         "compose-up": compose_up,
         "compose-down": compose_down,
         "smoke": smoke,
     }
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("command", choices=commands)
+    args = parser.parse_args()
 
     try:
         commands[args.command]()
