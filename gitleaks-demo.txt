@@ -1,3 +1,0 @@
-# TP 01 : valeur synthétique calculée localement, jamais émise par GitHub.
-# Branche jetable uniquement : ne pas fusionner.
-GITHUB_TOKEN=ghp_3822f92efdd51749aa719151fdddc7b29907
