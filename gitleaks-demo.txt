@@ -1,0 +1,3 @@
+# TP 01 : valeur de démonstration entièrement factice, jamais émise par GitHub.
+# Ce fichier appartient uniquement à la branche jetable, à ne pas fusionner.
+GITHUB_TOKEN=ghp_0123456789abcdefghijklmnopqrstuvwxyz
