@@ -3,9 +3,6 @@ name: CI - car-rental-service
 on:
   push:
     branches: [main]
-    paths:
-      - 'apps/car-rental-service/**'
-      - '.github/workflows/ci-car-rental.yml'
   pull_request:
     branches: [main]
   workflow_dispatch:

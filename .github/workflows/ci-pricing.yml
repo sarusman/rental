@@ -3,9 +3,6 @@ name: CI - pricing-service
 on:
   push:
     branches: [main]
-    paths:
-      - 'apps/pricing-service/**'
-      - '.github/workflows/ci-pricing.yml'
   pull_request:
     branches: [main]
   workflow_dispatch:

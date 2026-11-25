@@ -22,7 +22,7 @@ PRICING_SERVICE = ROOT / "apps" / "pricing-service"
 WORKFLOWS = ROOT / ".github" / "workflows"
 
 ACTION_SHA = re.compile(r"^[0-9a-f]{40}$")
-IMAGE_DIGEST = re.compile(r"@sha256:[0-9a-f]{64}(?:\s|$)")
+IMAGE_DIGEST = re.compile(r"@sha256:[0-9a-f]{64}$")
 
 
 def run(command: list[str], *, cwd: Path = ROOT) -> None:
@@ -74,10 +74,10 @@ def supply_chain_policy() -> None:
         for line_number, line in enumerate(
             workflow.read_text(encoding="utf-8").splitlines(), start=1
         ):
-            stripped = line.strip()
-            if not stripped.startswith("uses:"):
+            match = re.match(r"^\s*(?:-\s+)?uses:\s*(.*)", line)
+            if not match:
                 continue
-            reference = stripped.removeprefix("uses:").split("#", maxsplit=1)[0].strip()
+            reference = match.group(1).split("#", maxsplit=1)[0].strip().strip("\"'")
             if reference.startswith("./"):
                 continue
             if "@" not in reference or not ACTION_SHA.fullmatch(reference.rsplit("@", 1)[1]):
@@ -85,11 +85,15 @@ def supply_chain_policy() -> None:
                     f"{workflow.relative_to(ROOT)}:{line_number}: action not pinned to a SHA"
                 )
 
-    for dockerfile in sorted((ROOT / "apps").glob("*/Dockerfile")):
+    for dockerfile in sorted(ROOT.rglob("Dockerfile")):
         for line_number, line in enumerate(
             dockerfile.read_text(encoding="utf-8").splitlines(), start=1
         ):
-            if line.strip().upper().startswith("FROM ") and not IMAGE_DIGEST.search(line):
+            parts = line.split("#", maxsplit=1)[0].split()
+            if not parts or parts[0].upper() != "FROM":
+                continue
+            images = [part for part in parts[1:] if not part.startswith("--")]
+            if not images or not IMAGE_DIGEST.search(images[0]):
                 errors.append(
                     f"{dockerfile.relative_to(ROOT)}:{line_number}: base image not pinned to a digest"
                 )
