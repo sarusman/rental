@@ -1,5 +1,8 @@
 # Rental DevOps — checkpoint 00
 
+Le TP 01 est réalisé sur `tp/01-ci`, comparée à `tp/01-ci-base`, qui pointe sur
+`checkpoint/00-starter`. Voir le [compte rendu](docs/TP-01-COMPTE-RENDU.md).
+
 Ce monorepo est le socle d'une formation DevOps pratique destinée à des
 étudiants de master. Le checkpoint 00 fournit deux services autonomes,
 testables et conteneurisés, mais laisse volontairement à construire la
@@ -54,17 +57,18 @@ python -m pip install -r requirements-dev.txt
 cd ../..
 ```
 
-## Tests
+## Tests et qualité
 
 Depuis la racine :
 
 ```bash
-python scripts/course.py test
+python scripts/course.py verify
 ```
 
-Cette commande exécute les tests Gradle puis les tests Pytest.
-Pour diagnostiquer séparément un service, utiliser `test-java` ou
-`test-python` à la place de `test`.
+Cette commande exécute les tests Gradle, Pytest, Checkstyle puis Ruff
+(lint et formatage), et s'arrête au premier échec avec le code 1.
+Les commandes `test`, `test-java`, `test-python`, `lint`, `lint-java` et
+`lint-python` permettent de lancer les contrôles séparément.
 
 ## Exécution avec Docker Compose
 
@@ -108,8 +112,7 @@ tests/                Futures suites de tests système
 - aucune communication entre les services ;
 - aucune base PostgreSQL ni migration ;
 - aucun test de contrat ou test E2E ;
-- aucun manifeste Kubernetes ou cluster Kind ;
-- workflows CI encore redondants et non durcis.
+- aucun manifeste Kubernetes ou cluster Kind.
 
 Voir [la fiche du checkpoint](docs/CHECKPOINT-00.md) pour les objectifs et les
 critères de validation.
