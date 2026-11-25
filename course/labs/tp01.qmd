@@ -16,6 +16,23 @@ Votre mission consiste à rendre les contrôles explicites, reproductibles et
 exploitables. Vous partez du tag `checkpoint/00-starter`. Le tag
 `checkpoint/01-ci` sert uniquement de corrigé après le TP.
 
+## Parcours Git du TP
+
+La branche `main` contient l'état le plus avancé préparé par l'enseignant. Ne
+travaillez pas directement depuis cette branche.
+
+Pour ce TP :
+
+| Rôle | Référence Git |
+|---|---|
+| Point de départ | `checkpoint/00-starter` |
+| Branche de travail | `tp/01-ci` |
+| Résultat de référence | `checkpoint/01-ci` |
+
+Conservez votre branche `tp/01-ci` après le TP. Elle garde la trace de votre
+travail, mais le TP 02 repartira du corrigé officiel `checkpoint/01-ci`. Tous
+les étudiants commenceront ainsi le checkpoint suivant depuis le même état.
+
 ## Objectifs et livrables
 
 À la fin du TP, votre branche contient :
@@ -34,6 +51,36 @@ git fetch --tags
 git switch --create tp/01-ci checkpoint/00-starter
 python scripts/course.py test
 ```
+
+### Rôle de `course.py`
+
+`scripts/course.py` fournit des commandes portables pour le travail local. Il
+choisit automatiquement `gradlew.bat` sous Windows et `./gradlew` sur les
+autres systèmes, puis exécute les outils dans le répertoire du service concerné.
+
+Au début du TP, les commandes suivantes sont déjà disponibles :
+
+| Commande | Action |
+|---|---|
+| `prerequisites` | Vérifie la présence de Python, Java et Docker |
+| `test-java` | Exécute `gradlew clean test` dans le service Java |
+| `test-python` | Exécute Pytest avec l'interpréteur Python courant |
+| `test` | Lance les tests Java, puis les tests Python |
+| `compose-up` / `compose-down` | Construit, démarre ou arrête l'environnement Docker Compose |
+| `smoke` | Vérifie les endpoints des deux services et une réponse métier attendue |
+
+La commande `smoke` suppose que les services sont déjà démarrés. Elle attend
+leur disponibilité, vérifie `/health` et `/cars`, puis contrôle qu'une cotation
+standard de deux jours vaut 120 EUR.
+
+Pendant le TP, vous ajouterez `lint-java`, `lint-python`, `lint` et `verify`.
+La commande `verify` devra exécuter successivement les tests et les contrôles
+qualité. Si une commande échoue, le script s'arrête et retourne le code `1`.
+
+`verify` reproduit les portes locales **tests et qualité**. Elle ne construit
+pas les images, ne lance pas Gitleaks, ne publie pas les rapports et ne vérifie
+pas la protection de branche. Ces responsabilités restent dans les workflows
+GitHub Actions.
 
 Lisez les workflows existants. Pour chaque job, notez le risque couvert, les
 entrées, la sortie et le coût approximatif.

@@ -76,20 +76,21 @@ Séparer les jobs localise l'échec et permet d'exprimer les dépendances.
 ## Le graphe du checkpoint 01
 
 ```{mermaid}
-flowchart LR
+flowchart TB
   subgraph Java
-    JT[Java tests] --> JD[Java Docker image]
-    JQ[Java quality] --> JD
+    direction LR
+    JT[Tests] --> JD[Image Java]
+    JQ[Checkstyle] --> JD
   end
   subgraph Python
-    PT[Python tests] --> PD[Python Docker image]
-    PQ[Python quality] --> PD
+    direction LR
+    PT[Tests] --> PD[Image Python]
+    PQ[Ruff] --> PD
   end
-  S[Secret detection]
+  S[Détection de secrets]
 ```
 
-Les constructions Docker démarrent uniquement si les deux portes du service
-sont vertes.
+Chaque image attend les tests et le contrôle qualité de son service.
 
 ## Local d'abord, CI ensuite
 
@@ -103,6 +104,18 @@ Cette commande exécute les mêmes familles de contrôles :
 - Checkstyle + Ruff pour la qualité.
 
 La CI ne doit pas être un environnement mystérieux réservé au serveur.
+
+## Checkstyle et Ruff
+
+| | Checkstyle | Ruff |
+|---|---|---|
+| Cible | Java 17 | Python 3.12 |
+| Contrôles | Règles du projet | Lint et formatage |
+| Commande | `./gradlew checkstyleMain checkstyleTest` | `ruff check` puis `ruff format --check` |
+| Preuve | Rapports XML et HTML | Diagnostic dans le log |
+
+Les versions et les règles restent dans le dépôt. Le même contrôle s'exécute
+sur le poste étudiant et dans GitHub Actions.
 
 ## Les artefacts racontent l'échec
 
@@ -119,14 +132,48 @@ La CI ne doit pas être un environnement mystérieux réservé au serveur.
 
 Un log dit **où regarder** ; un rapport aide à comprendre **ce qui a cassé**.
 
-## Cache : accélérateur, pas vérité
+## Docker Buildx
 
-- Gradle : dépendances et distribution du wrapper ;
-- pip : paquets indexés par le fichier de dépendances ;
-- Buildx : couches Docker par service.
+Buildx pilote **BuildKit** et choisit où et comment exécuter la construction.
 
-La clé doit changer lorsque ses entrées changent. Un cache doit pouvoir être
-supprimé sans changer le résultat fonctionnel.
+| Capacité | Usage |
+|---|---|
+| Choisir le builder | Docker, conteneur dédié, Kubernetes ou service distant |
+| Cibler plusieurs plateformes | Construire `linux/amd64` et `linux/arm64` en une commande |
+| Choisir la sortie | Charger localement, pousser au registre ou exporter un artefact |
+| Partager le cache | Importer et exporter des couches entre deux exécutions |
+
+## Cache Buildx en CI
+
+:::: {.columns .small}
+
+::: {.column width="43%"}
+```yaml
+cache-from: type=gha,
+  scope=pricing-service
+cache-to: type=gha,
+  scope=pricing-service,
+  mode=max
+```
+:::
+
+::: {.column width="57%"}
+1. `cache-from` importe le cache au début du job.
+2. BuildKit ne reconstruit que les couches invalidées.
+3. `cache-to` exporte le cache à la fin du job.
+
+Le `scope` sépare les services. `mode=max` conserve aussi les étapes
+intermédiaires, au prix d'un cache plus volumineux.
+:::
+
+::::
+
+Le cache évite des téléchargements et des compilations répétés, ce qui
+raccourcit la boucle de retour.
+
+::: {.fragment .accent}
+Sans cache, le résultat reste identique et la construction prend plus de temps.
+:::
 
 ::: {.fragment .accent}
 Si vider le cache casse la build, le cache masque une dépendance.
@@ -200,6 +247,7 @@ Un bon checkpoint ferme un objectif et rend la prochaine limite visible.
 ## Références
 
 - Documentation GitHub Actions : workflows, artefacts et protection de branche
+- Documentation Docker : Buildx, builders et cache BuildKit
 - Documentation officielle de Ruff et Checkstyle
 - OWASP CI/CD Security Cheat Sheet
 

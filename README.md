@@ -1,9 +1,9 @@
-# Rental DevOps — checkpoint 01
+# Rental DevOps — checkpoint 02
 
 Ce monorepo est le socle d'une formation DevOps pratique destinée à des
-étudiants de master. Le checkpoint 01 ajoute une boucle d'intégration continue
-observable au socle applicatif : tests, qualité, artefacts de diagnostic,
-construction des images et détection de secrets.
+étudiants de master. Le checkpoint 02 sécurise la chaîne de production des
+images : références immuables, nomenclatures logicielles, signatures sans clé
+et attestations de provenance.
 
 ## Architecture actuelle
 
@@ -62,21 +62,26 @@ Depuis la racine :
 python scripts/course.py verify
 ```
 
-Cette commande exécute les tests Gradle et Pytest, puis Checkstyle et Ruff.
+Cette commande exécute les tests Gradle et Pytest, Checkstyle, Ruff, puis la
+politique locale de chaîne logicielle.
 Pour diagnostiquer une étape séparément, utiliser `test`, `lint`,
-`test-java`, `test-python`, `lint-java` ou `lint-python`.
+`test-java`, `test-python`, `lint-java`, `lint-python` ou
+`supply-chain-policy`.
 
 ## Intégration continue
 
-Chaque pull request vers `main` déclenche sept contrôles lisibles :
+Chaque pull request vers `main` déclenche huit contrôles lisibles :
 
 - tests, qualité et construction de l'image pour le service Java ;
 - tests, qualité et construction de l'image pour le service Python ;
 - détection de secrets sur l'historique Git.
+- revue des dépendances ajoutées ou mises à jour.
 
 Les rapports de tests et de qualité sont conservés sept jours comme artefacts
-GitHub Actions. Sur `main`, les images sont publiées dans GHCR puis analysées
-avec Trivy.
+GitHub Actions. Sur `main`, chaque image est publiée par digest dans GHCR, signée
+avec Cosign, accompagnée d'un SBOM SPDX et de deux attestations GitHub, puis
+analysée avec Trivy. Les workflows vérifient leurs propres preuves avant de se
+terminer.
 
 ## Exécution avec Docker Compose
 
@@ -121,15 +126,16 @@ tests/                Futures suites de tests système
 - aucune base PostgreSQL ni migration ;
 - aucun test de contrat ou test E2E ;
 - aucun manifeste Kubernetes ou cluster Kind ;
-- actions tierces non encore figées par empreinte SHA ;
-- aucune nomenclature SBOM ni signature des images.
+- dépendances transitives applicatives non verrouillées par hash ;
+- aucune vérification de signature à l'admission Kubernetes.
 
-Voir [la fiche du checkpoint](docs/CHECKPOINT-01.md), le
-[support de cours](course/slides/01-ci.qmd) et le [TP 01](course/labs/tp01.qmd).
+Voir [la fiche du checkpoint](docs/CHECKPOINT-02.md), le
+[support de cours](course/slides/02-supply-chain.qmd) et le
+[TP 02](course/labs/tp02.qmd).
 
 Le point de départ étudiant reste disponible sous le tag
-`checkpoint/00-starter`. L'état validé de cette étape est publié sous
-`checkpoint/01-ci`.
+`checkpoint/00-starter`. Les deux premières étapes validées sont publiées sous
+`checkpoint/01-ci` et `checkpoint/02-supply-chain`.
 
 L'état historique antérieur à la refonte reste disponible sous le tag
 `legacy/v1-microservices`.
