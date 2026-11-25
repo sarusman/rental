@@ -23,6 +23,15 @@ updates:
       time: "06:15"
       timezone: Europe/Paris
     open-pull-requests-limit: 3
+    ignore:
+      # Java and Gradle major versions define the course runtime baseline.
+      # Upgrade them through a dedicated migration checkpoint instead.
+      - dependency-name: gradle
+        update-types:
+          - version-update:semver-major
+      - dependency-name: eclipse-temurin
+        update-types:
+          - version-update:semver-major
 
   - package-ecosystem: docker
     directory: /apps/pricing-service
@@ -32,3 +41,8 @@ updates:
       time: "06:15"
       timezone: Europe/Paris
     open-pull-requests-limit: 3
+    ignore:
+      # Python major versions define the course runtime baseline.
+      - dependency-name: python
+        update-types:
+          - version-update:semver-major
